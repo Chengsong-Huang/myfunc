@@ -1,0 +1,2 @@
+# myfunc
+common use function 
