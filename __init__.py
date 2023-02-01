@@ -1,9 +1,17 @@
 import os
 
+def log(s):
+    with open('log.log','a')as f: f.write(s+'\n')
+
+
+def p(s):
+    log(s)
+    print(s)
+
 def divide_line(words,size=60):
-    print('*'*size)
-    print(' '*((size-len(words))//2)+words+' '*((size-len(words))//2))
-    print('*'*size)
+    p('*'*size)
+    p(' '*((size-len(words))//2)+words+' '*((size-len(words))//2))
+    p('*'*size)
 
 def getallfile(path):
     # get all file name in the dictionary
@@ -34,3 +42,4 @@ def divide_list(listTemp, n):
 
 def cycle(l,length):
     return l*(length//len(l)) if length%len(l)==0 else l*(length//len(l))+l[:length%len(l)]
+
