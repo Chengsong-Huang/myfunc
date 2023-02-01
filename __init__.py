@@ -22,10 +22,15 @@ def getallfile(path):
 
 def init_dictionary(path):
     if not os.path.exists(path):
-        os.makedirs(path)
+        try:
+            os.makedirs(path)
+        except:pass
 
 def divide_list(listTemp, n):
     twoList = [ [] for i in range(n)]
     for i,e in enumerate(listTemp):
         twoList[i%n].append(e)
     return twoList
+
+def cycle(l,length):
+    return l*(length//len(l)) if length%len(l)==0 else l*(length//len(l))+l[:length%len(l)]
